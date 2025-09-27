@@ -6,12 +6,11 @@
 /*   By: atvii <atvii@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/26 19:39:53 by atvii             #+#    #+#             */
-/*   Updated: 2025/09/27 17:57:48 by atvii            ###   ########.fr       */
+/*   Updated: 2025/09/27 20:41:34 by atvii            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-#include <stdio.h>
 
 int	ft_printf(const char *conv, ...)
 {
