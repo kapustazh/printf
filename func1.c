@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   func1.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mnestere <mnestere@student.42.fr>          +#+  +:+       +#+        */
+/*   By: atvii <atvii@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/07 16:23:17 by mnestere          #+#    #+#             */
-/*   Updated: 2025/10/07 17:19:47 by mnestere         ###   ########.fr       */
+/*   Updated: 2025/10/07 20:47:58 by atvii            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,19 +64,22 @@ int	ft_nbr_base(long nbr, int base, char form)
 {
 	unsigned long	unbr;
 	int				num;
+	int				result;
 
 	num = 0;
 	if (form == 'd' && nbr < 0)
 	{
-		num += ft_putchar('-');
-		if (num == -1)
+		result = ft_putchar('-');
+		if (result == -1)
 			return (-1);
+		num += result;
 		unbr = (unsigned long)(-nbr);
 	}
 	else
 		unbr = (unsigned long)nbr;
-	num += ft_unbr_base(unbr, base, form);
-	if (num == -1)
+	result = ft_unbr_base(unbr, base, form);
+	if (result == -1)
 		return (-1);
+	num += result;
 	return (num);
 }
