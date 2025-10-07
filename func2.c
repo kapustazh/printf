@@ -3,34 +3,71 @@
 /*                                                        :::      ::::::::   */
 /*   func2.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: atvii <atvii@student.42.fr>                +#+  +:+       +#+        */
+/*   By: mnestere <mnestere@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/09/27 16:12:56 by atvii             #+#    #+#             */
-/*   Updated: 2025/09/27 20:41:35 by atvii            ###   ########.fr       */
+/*   Created: 2025/10/07 16:23:10 by mnestere          #+#    #+#             */
+/*   Updated: 2025/10/07 17:49:04 by mnestere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
+// int	minus_one_checker(const char c, int result, int count, int (*f))
+// {
+// }
+
 int	ft_conv_checker_3(const char c, va_list args, int count)
 {
+	int	result;
+
 	if (c == 'c')
-		count += ft_putchar((char)va_arg(args, int));
+	{
+		result = ft_putchar(va_arg(args, int));
+		if (result == -1)
+			return (-1);
+		count += result;
+	}
 	if (c == 'd' || c == 'i')
-		count += ft_nbr_base(va_arg(args, int), 10, 'd');
+	{
+		result = ft_nbr_base(va_arg(args, int), 10, 'd');
+		if (result == -1)
+			return (-1);
+		count += result;
+	}
 	else if (c == 'u')
-		count += ft_unbr_base(va_arg(args, unsigned int), 10, 'd');
+	{
+		result = ft_unbr_base(va_arg(args, unsigned int), 10, 'd');
+		if (result == -1)
+			return (-1);
+		count += result;
+	}
 	else if (c == 'x')
-		count += ft_unbr_base(va_arg(args, unsigned int), 16, 'x');
+	{
+		result = ft_unbr_base(va_arg(args, unsigned int), 16, 'x');
+		if (result == -1)
+			return (-1);
+		count += result;
+	}
 	else if (c == 'X')
-		count += ft_unbr_base(va_arg(args, unsigned int), 16, 'X');
+	{
+		result = ft_unbr_base(va_arg(args, unsigned int), 16, 'X');
+		if (result == -1)
+			return (-1);
+		count += result;
+	}
 	else if (c == '%')
-		count += ft_putchar('%');
+	{
+		result = ft_putchar('%');
+		if (result == -1)
+			return (-1);
+		count += result;
+	}
 	return (count);
 }
 
 int	ft_conv_checker_2(const char c, va_list args, int count)
 {
+	int			result;
 	void		*ptr;
 	const char	*str;
 
@@ -38,19 +75,38 @@ int	ft_conv_checker_2(const char c, va_list args, int count)
 	{
 		str = va_arg(args, const char *);
 		if (!str)
-			count += ft_putstr("(null)");
+		{
+			result = ft_putstr("(null)");
+			if (result == -1)
+				return (-1);
+			count += result;
+		}
 		else
-			count += ft_putstr(str);
+			result = ft_putstr(str);
+		if (result == -1)
+			return (-1);
+		count += result;
 	}
 	else if (c == 'p')
 	{
 		ptr = va_arg(args, void *);
 		if (!ptr)
-			count += ft_putstr("(nil)");
+		{
+			result = ft_putstr("(nil)");
+			if (result == -1)
+				return (-1);
+			count += result;
+		}
 		else
 		{
-			count += ft_putstr("0x");
-			count += ft_unbr_base((unsigned long)ptr, 16, 'x');
+			result = ft_putstr("0x");
+			if (result == -1)
+				return (-1);
+			count += result;
+			result = ft_unbr_base((unsigned long)ptr, 16, 'x');
+			if (result == -1)
+				return (-1);
+			count += result;
 		}
 	}
 	return (count);

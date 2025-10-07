@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: atvii <atvii@student.42.fr>                +#+  +:+       +#+        */
+/*   By: mnestere <mnestere@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/09/26 19:39:53 by atvii             #+#    #+#             */
-/*   Updated: 2025/09/27 20:41:34 by atvii            ###   ########.fr       */
+/*   Created: 2025/10/07 16:23:31 by mnestere          #+#    #+#             */
+/*   Updated: 2025/10/07 17:44:03 by mnestere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@ int	ft_printf(const char *conv, ...)
 {
 	va_list	args;
 	int		printed;
+	int		result;
 
 	printed = 0;
 	va_start(args, conv);
@@ -30,7 +31,10 @@ int	ft_printf(const char *conv, ...)
 		}
 		else
 		{
-			printed += ft_putchar(*conv);
+			result = ft_putchar(*conv);
+			if (printed == -1)
+				return (-1);
+			printed += result;
 			conv++;
 		}
 	}

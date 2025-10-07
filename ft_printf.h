@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                      :+:      :+:    :+:   */
+/*   ft_printf.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: atvii <atvii@student.42.fr>                +#+  +:+       +#+        */
+/*   By: mnestere <mnestere@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/09/26 19:19:56 by atvii             #+#    #+#             */
-/*   Updated: 2025/09/27 13:57:45 by atvii            ###   ########.fr       */
+/*   Created: 2025/10/07 16:23:23 by mnestere          #+#    #+#             */
+/*   Updated: 2025/10/07 17:27:39 by mnestere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,5 +23,6 @@ int	ft_conv_checker_2(const char c, va_list args, int count);
 int	ft_conv_checker_3(const char c, va_list args, int count);
 int	ft_unbr_base(unsigned long unbr, unsigned long base, char form);
 int	ft_nbr_base(long nbr, int base, char form);
+// int	minus_one_checker(const char c, int result, int count);
 
 #endif
