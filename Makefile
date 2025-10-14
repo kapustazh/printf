@@ -2,7 +2,7 @@ NAME = libftprintf.a
 CC = cc
 RM = rm -f
 
-SRCS = main.c func1.c func2.c
+SRCS = main.c utils1.c utils2.c
 
 CFLAGS = -Wall -Wextra -Werror
 CFILES = $(SRCS)
