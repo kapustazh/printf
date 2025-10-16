@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   func1.c                                            :+:      :+:    :+:   */
+/*   utils1.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: atvii <atvii@student.42.fr>                +#+  +:+       +#+        */
+/*   By: mnestere <mnestere@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/07 16:23:17 by mnestere          #+#    #+#             */
-/*   Updated: 2025/10/14 23:58:38 by atvii            ###   ########.fr       */
+/*   Updated: 2025/10/16 15:36:55 by mnestere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,8 +37,6 @@ int	ft_putstr(const char *str)
 	}
 	return (i);
 }
-
-// a bit mixed putnbr_base to cover hex and decimal num
 
 int	ft_unbr_base(unsigned long unbr, unsigned long base, char form)
 {
