@@ -6,7 +6,7 @@
 /*   By: mnestere <mnestere@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/07 16:23:10 by mnestere          #+#    #+#             */
-/*   Updated: 2025/10/16 15:36:57 by mnestere         ###   ########.fr       */
+/*   Updated: 2025/10/16 16:29:10 by mnestere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@ int	ft_conv_checker_cdiu(const char c, va_list args)
 {
 	int	result;
 
+	result = 0;
 	if (c == 'c')
 	{
 		result = ft_putchar((unsigned char)va_arg(args, int));
@@ -41,6 +42,7 @@ int	ft_conv_checker_xxper(const char c, va_list args)
 {
 	int	result;
 
+	result = 0;
 	if (c == 'x')
 	{
 		result = ft_unbr_base(va_arg(args, unsigned int), 16, 'x');
