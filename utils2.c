@@ -6,7 +6,7 @@
 /*   By: mnestere <mnestere@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/07 16:23:10 by mnestere          #+#    #+#             */
-/*   Updated: 2025/10/16 16:29:10 by mnestere         ###   ########.fr       */
+/*   Updated: 2025/10/17 11:18:08 by mnestere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,6 +83,7 @@ int	ft_conv_checker_p(va_list args)
 {
 	int		result;
 	void	*ptr;
+	int		tmp;
 
 	ptr = va_arg(args, void *);
 	if (!ptr)
@@ -96,9 +97,10 @@ int	ft_conv_checker_p(va_list args)
 		result = ft_putstr("0x");
 		if (result == -1)
 			return (-1);
-		result += ft_unbr_base((unsigned long)ptr, 16, 'x');
+		tmp = ft_unbr_base((unsigned long)ptr, 16, 'x');
 		if (result == -1)
 			return (-1);
+		result += tmp;
 	}
 	return (result);
 }
